@@ -1,6 +1,6 @@
 
 
-function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingData, setRatingData, genreData, setGenreData }) {
+function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingData, setRatingData, genreData, setGenreData,handleFav }) {
 
   const handleSearch = (e) => {
     setSearchData(e.target.value);
@@ -21,19 +21,29 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         name="search"
         value={searchData}
         placeholder="Search here ... "
-        className="p-2 rounded"
+        className="p-2 rounded mb-10"
         onChange={handleSearch}
       />
-      <button className="p-2 text-white font-bold border border-white bg-green-500 rounded">Favorite</button>
+      <button
+        className="p-2 text-white font-bold border border-white bg-green-500 rounded"
+        onClick={handleFav}
+      >
+        Favorite
+      </button>
       <select
         value={yearData}
         name="years"
         onChange={handleYear}
-        className="border border-gray-300 p-2 mb-2 rounded bg-yellow-100"
+        className="border border-gray-300 p-2 mb-2 rounded bg-blue-300"
       >
         <option value="">Filter by Years</option>
         <option value="2024">2024</option>
         <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
         <option value="1997">1997</option>
         <option value="1975">1975</option>
       </select>
@@ -41,7 +51,7 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         value={ratingData}
         name="rating"
         onChange={handleRating}
-        className="border border-gray-300 p-2 mb-2 rounded bg-yellow-100"
+        className="border border-gray-300 p-2 mb-2 rounded bg-blue-300"
       >
         <option value="">Filter by Rating</option>
         <option value="9">9 and above</option>
@@ -59,7 +69,7 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         value={genreData}
         name="genre"
         onChange={handleGenre}
-        className="border border-gray-300 p-2 mb-2 rounded bg-yellow-100"
+        className="border border-gray-300 p-2 mb-2 rounded bg-blue-300"
       >
         <option value="">Filter by Genre</option>
         <option value="Action">Action</option>
