@@ -27,10 +27,12 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         placeholder="Search here ... "
         className="p-2 rounded mb-10"
         onChange={handleSearch}
+        aria-label="Search Movies"
       />
       <button
         className="p-2 text-white font-bold border border-white bg-green-500 rounded"
         onClick={handleFav}
+        aria-label="Add to Favorites"
       >
         Favorite
       </button>
@@ -39,6 +41,7 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         name="years"
         onChange={handleYear}
         className="border border-gray-300 p-2 mb-2 rounded bg-blue-300"
+        aria-label="Filter by Year"
       >
         <option value="">Filter by Years</option>
         <option value="2024">2024</option>
@@ -56,6 +59,7 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         name="rating"
         onChange={handleRating}
         className="border border-gray-300 p-2 mb-2 rounded bg-blue-300"
+        aria-label="Filter by Rating"
       >
         <option value="">Filter by Rating</option>
         <option value="9">9 and above</option>
@@ -74,6 +78,7 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
         name="genre"
         onChange={handleGenre}
         className="border border-gray-300 p-2 mb-2 rounded bg-blue-300"
+        aria-label="Filter by Genre"
       >
         <option value="">Filter by Genre</option>
         <option value="Action">Action</option>
