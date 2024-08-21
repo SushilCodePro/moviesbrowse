@@ -3,6 +3,8 @@ import Display from "./components/Display";
 import SearchBar from "./components/SearchBar";
 import FavDisplay from "./components/FavDisplay";
 
+const apiKey = process.env.REACT_APP_OMDB_API_KEY; // Move this outside of useEffect
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchData, setSearchData] = useState('');
@@ -15,26 +17,20 @@ function App() {
   });
   const [favData, setFavData] = useState(0);
 
-  // const memoizedData = useMemo(() => {
-    
-  //   const data = [
-  //     { title: 'Stree 2', year: '2024' },
-  //     { title: 'Twisters', year: '2024' },
-  //     { title: 'Titanic', year: '1997' },
-  //     { title: 'Sholay', year: '1975' },
-  //     { title: 'Restore Point', year: '2023' },
-  //     { title: 'Laapataa Ladies', year: '2023' },
-  //     { title: 'Avatar: The Way of Water', year: '2022' },
-  //     { title: 'Interstellar', year: '2014' },
-  //     { title: 'Dawn of the Planet of the Apes', year: '2014' },
-  //     { title: 'Hera Pheri', year: '2000' },
-  //     { title: 'The Matrix', year: '1999' },
-  //     { title: 'The Conjuring', year: '2013' }
-  //   ];
-  //   return data;
-  // }, []);
- 
-
+  // const data = [
+  //   { title: 'Stree 2', year: '2024' },
+  //   { title: 'Twisters', year: '2024' },
+  //   { title: 'Titanic', year: '1997' },
+  //   { title: 'Sholay', year: '1975' },
+  //   { title: 'Restore Point', year: '2023' },
+  //   { title: 'Laapataa Ladies', year: '2023' },
+  //   { title: 'Avatar: The Way of Water', year: '2022' },
+  //   { title: 'Interstellar', year: '2014' },
+  //   { title: 'Dawn of the Planet of the Apes', year: '2014' },
+  //   { title: 'Hera Pheri', year: '2000' },
+  //   { title: 'The Matrix', year: '1999' },
+  //   { title: 'The Conjuring', year: '2013' }
+  // ];
 
   useEffect(() => {
 
@@ -52,6 +48,7 @@ function App() {
       { title: 'The Matrix', year: '1999' },
       { title: 'The Conjuring', year: '2013' }
     ];
+  
 
     async function fetchAllMovies() {
       try {
@@ -65,7 +62,6 @@ function App() {
     }
 
     async function fetchMovieDetails(title, year) {
-      const apiKey = '58f0093f'; // Your OMDb API key
       const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${apiKey}`;
 
       try {
@@ -85,7 +81,7 @@ function App() {
     }
 
     fetchAllMovies();
-  }, []);
+  }, []); // Dependency array remains empty
 
   const filterData = useMemo(() => {
     return movies.filter(
