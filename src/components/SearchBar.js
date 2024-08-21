@@ -4,19 +4,20 @@ function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingDat
 
   const handleSearch = useCallback((e) => {
     setSearchData(e.target.value);
-  }, []);
+  }, [setSearchData]); // Add 'setSearchData' to the dependency array
   
   const handleYear = useCallback((e) => {
     setYearData(e.target.value);
-  }, []);
+  }, [setYearData]); // Add 'setYearData' to the dependency array
   
   const handleRating = useCallback((e) => {
     setRatingData(e.target.value);
-  }, []);
+  }, [setRatingData]); // Add 'setRatingData' to the dependency array
   
   const handleGenre = useCallback((e) => {
     setGenreData(e.target.value);
-  }, []);
+  }, [setGenreData]); // Add 'setGenreData' to the dependency array
+  
   
   return (
     <div className=" flex flex-col space-y-2">
