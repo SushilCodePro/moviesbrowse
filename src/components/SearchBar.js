@@ -1,19 +1,23 @@
-
+import { useCallback } from "react";
 
 function SearchBar({ searchData, setSearchData, yearData, setYearData, ratingData, setRatingData, genreData, setGenreData,handleFav }) {
 
-  const handleSearch = (e) => {
+  const handleSearch = useCallback((e) => {
     setSearchData(e.target.value);
-  }
-  const handleYear = (e) => {
+  }, []);
+  
+  const handleYear = useCallback((e) => {
     setYearData(e.target.value);
-  }
-  const handleRating = (e) => {
+  }, []);
+  
+  const handleRating = useCallback((e) => {
     setRatingData(e.target.value);
-  }
-  const handleGenre = (e) => {
+  }, []);
+  
+  const handleGenre = useCallback((e) => {
     setGenreData(e.target.value);
-  }
+  }, []);
+  
   return (
     <div className=" flex flex-col space-y-2">
       <input

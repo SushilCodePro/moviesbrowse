@@ -11,11 +11,11 @@ function FavDisplay({ addData, handleHome, handleRemove }) {
                 </button>
             </div>
 
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-2">
 
                 {addData.map((singleData) => (
                     <div key={singleData.imdbID} className="border border-white h-66 text-white p-1 rounded">
-                        <img src={`${singleData.Poster}`} className='h-52 w-56' alt="" />
+                        <img src={`${singleData.Poster}`} className='h-52 w-full' alt="" />
                         <div className="flex justify-between items-center">
                             <div>
                                 <p className="font-bold text-xl">{singleData.Title}</p>
