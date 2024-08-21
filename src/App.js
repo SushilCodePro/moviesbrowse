@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar";
 import FavDisplay from "./components/FavDisplay";
 
 const apiKey = process.env.REACT_APP_OMDB_API_KEY; // Move this outside of useEffect
+console.log('API Key:', apiKey);
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -16,21 +17,6 @@ function App() {
     return savedData ? JSON.parse(savedData) : [];
   });
   const [favData, setFavData] = useState(0);
-
-  // const data = [
-  //   { title: 'Stree 2', year: '2024' },
-  //   { title: 'Twisters', year: '2024' },
-  //   { title: 'Titanic', year: '1997' },
-  //   { title: 'Sholay', year: '1975' },
-  //   { title: 'Restore Point', year: '2023' },
-  //   { title: 'Laapataa Ladies', year: '2023' },
-  //   { title: 'Avatar: The Way of Water', year: '2022' },
-  //   { title: 'Interstellar', year: '2014' },
-  //   { title: 'Dawn of the Planet of the Apes', year: '2014' },
-  //   { title: 'Hera Pheri', year: '2000' },
-  //   { title: 'The Matrix', year: '1999' },
-  //   { title: 'The Conjuring', year: '2013' }
-  // ];
 
   useEffect(() => {
 
