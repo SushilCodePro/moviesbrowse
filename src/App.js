@@ -63,7 +63,7 @@ function App() {
     }
 
     fetchAllMovies();
-  }, []);
+  }, [data]);
 
   const filterData = useMemo(() => {
     return movies.filter(
