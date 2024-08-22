@@ -48,7 +48,10 @@ function App() {
     }
 
     async function fetchMovieDetails(title, year) {
-      const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${apiKey}`;
+      // const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${apiKey}`;
+      
+      const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${apiKey}`;
+
 
       try {
         const response = await fetch(url);
